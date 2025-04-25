@@ -1,0 +1,21 @@
+# Entorno virtual
+whisper-env/
+ffmpeg/*
+transcriptions_test
+.env
+audio_o*
+audio_input/*
+
+# Archivos Python compilados
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Configs locales
+*.vscode/
+*.idea/
+.DS_Store
+
+# Otros
+*.log
