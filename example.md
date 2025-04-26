@@ -2,7 +2,7 @@
 
 ### 📥 Audio original (Entrada)
 
-[🔊 Escuchar audio original](audio_examples/input_audio.mp3)
+[🔊 Escuchar audio original](audio_examples/input_audio.wav)
 
 > Voz original en idioma de entrada.
 
