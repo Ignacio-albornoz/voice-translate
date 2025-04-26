@@ -2,7 +2,6 @@ def run_diarization_transcription(audio_path):
     import whisper
     from pyannote.audio import Pipeline
     from collections import defaultdict
-    from dotenv import load_dotenv
     import datetime
     import os
     import sys
@@ -10,15 +9,20 @@ def run_diarization_transcription(audio_path):
     # todo tu código actual que genera output_transcript.txt
     print("✅ Diarization + Transcripción completa.")
 
-    # Cargar variables de entorno
-    load_dotenv()
+    # Detectar si estamos en Colab (opcional, por prolijidad)
+    in_colab = "COLAB_GPU" in os.environ
+
+    # Cargar el Token de HuggingFace
+    HUGGINGFACE_TOKEN = os.getenv("HUGGINGFACE_TOKEN")
+    
+    if not HUGGINGFACE_TOKEN:
+        raise ValueError("❌ No se encontró el HUGGINGFACE_TOKEN en las variables de entorno.")
 
     # Agregar FFmpeg al PATH
     ffmpeg_path = os.path.abspath("ffmpeg/bin")
     os.environ["PATH"] += os.pathsep + ffmpeg_path
 
     # === CONFIGURACIÓN ===
-    HUGGINGFACE_TOKEN = os.getenv("HUGGINGFACE_TOKEN")
     AUDIO_PATH = audio_path # r"C:\Users\ignac\voice-translate\audio_input\input2.wav"
     MODEL_SIZE = "small"  # podés cambiarlo por "small", "medium", etc.
 
