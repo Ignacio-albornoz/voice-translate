@@ -3,12 +3,9 @@ def run_generate_voice_coqui():
     from pydub import AudioSegment
     from tempfile import NamedTemporaryFile
     from googletrans import Translator
-    from dotenv import load_dotenv
     from TTS.api import TTS
 
     print("✅ Traducción + Generación de voz completa (Coqui TTS).")
-
-    load_dotenv()
 
     ffmpeg_path = os.path.abspath("ffmpeg/bin")
     os.environ["PATH"] += os.pathsep + ffmpeg_path
@@ -18,7 +15,7 @@ def run_generate_voice_coqui():
 
     voice_map = {
         "SPEAKER_00": "tts_models/es/mai/tacotron2-DDC",  # Español voz 1
-        "SPEAKER_01": "tts_models/en/ljspeech/tacotron2-DDC"  # Inglés voz 2 (o podes buscar otra española)
+        "SPEAKER_01": "tts_models/es/css10/vits"  # Español voz 2
     }
 
     with open("output_transcript.txt", "r", encoding="utf-8") as f:
