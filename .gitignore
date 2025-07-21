@@ -5,6 +5,7 @@ transcriptions_test
 .env
 audio_o*
 audio_input/*
+venv/
 
 # Archivos Python compilados
 __pycache__/
